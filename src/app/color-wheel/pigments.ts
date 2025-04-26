@@ -1,0 +1,121 @@
+import {Ab} from "../model/app.model";
+
+export interface Ch {
+  c: number;
+  h: number;
+}
+
+
+export interface Pigment {
+  code: string;
+  name: string;
+  l: number;
+  ab: Ab;
+  ch: Ch;
+  hex: string;
+  note?: string;
+  hideByDefault?: boolean;
+  extinct?: boolean;
+  fugitive?: boolean;
+}
+
+export const PIGMENTS: Pigment[] = [
+  { code: 'PW4', name: 'Zinc white', l: 0.9592, ab: new Ab(0, 0.0104), ch: {c: 0.0104, h: 90.2 }, hex: '#f4f1ea', hideByDefault: true},
+  { code: 'PW6', name: 'Titanium white', l: 0.986, ab: new Ab(0.0003, 0.0025), ch: {c: 0.0025, h: 83.39 }, hex: '#fbfaf8', hideByDefault: true},
+  { code: 'PW6:1', name: 'Buff titanium', l: 0.8308, ab: new Ab(0.0108, 0.0682), ch: {c: 0.0691, h: 81.04 }, hex: '#dfc495'},
+  { code: 'PBk9', name: 'Ivory black', l: 0.3304, ab: new Ab(0.0024, 0.0043), ch: {c: 0.005, h: 60.42 }, hex: '#373533', hideByDefault: true},
+  { code: 'PBk11', name: 'Mars black', l: 0.3195, ab: new Ab(0.0011, -0.0001), ch: {c: 0.0011, h: 352.47 }, hex: '#333233'},
+  { code: 'PY53', name: 'Nickel titanate yellow', l: 0.934, ab: new Ab(-0.0344, 0.1284), ch: {c: 0.1329, h: 105 }, hex: '#f6ee80'},
+  { code: 'PY3', name: 'Lemon yellow', l: 0.9382, ab: new Ab(-0.0553, 0.2066), ch: {c: 0.2139, h: 104.97 }, hex: '#fff000'},
+  { code: 'PY175', name: 'Imidazolone lemon', l: 0.9305, ab: new Ab(-0.0489, 0.1828), ch: {c: 0.1892, h: 104.97 }, hex: '#fcee2b', hideByDefault: true},
+  { code: 'PY184', name: 'Bismuth vanadate yellow', l: 0.918, ab: new Ab(-0.0456, 0.1837), ch: { c: 0.1892, h: 103.95 }, hex: '#fae91e', hideByDefault: true},
+  { code: 'PY128', name: 'Azo yellow', l: 0.9187, ab: new Ab(-0.0426, 0.194), ch: { c: 0.1986, h: 102.38 }, hex: '#ffe700', hideByDefault: true},
+  { code: 'PY154', name: 'Imidazolone yellow', l: 0.92, ab: new Ab(-0.0333, 0.1876), ch: { c: 0.1905, h: 100.07 }, hex: '#ffe609', hideByDefault: true},
+  { code: 'PY109', name: 'Isoindoline yellow light', l: 0.9046, ab: new Ab(-0.0327, 0.1908), ch: { c: 0.1936, h: 99.72 }, hex: '#ffe000', hideByDefault: true},
+  { code: 'PY151', name: 'Aureolin hue', l: 0.9015, ab: new Ab(-0.0281, 0.2047), ch: { c: 0.2066, h: 97.81 }, hex: '#ffdd00'},
+  { code: 'PY40', name: 'Aureolin', l: 0.8943, ab: new Ab(-0.0248, 0.1864), ch: { c: 0.188, h: 97.57 }, hex: '#ffdb00', fugitive: true, hideByDefault: true},
+  { code: 'PY97', name: 'Diarylide yellow', l: 0.9014, ab: new Ab(-0.024, 0.2015), ch: { c: 0.2029, h: 96.79 }, hex: '#ffdc00', hideByDefault: true},
+  { code: 'PY129', name: 'Irgazin yellow', l: 0.7517, ab: new Ab(-0.0139, 0.1489), ch: { c: 0.1495, h: 95.35 }, hex: '#ccad19'},
+  { code: 'PY150', name: 'Nickel azo yellow', l: 0.8647, ab: new Ab(-0.0122, 0.1818), ch: { c: 0.1822, h: 93.83 }, hex: '#face00'},
+  { code: 'PBr7', name: 'Raw sienna', l: 0.7611, ab: new Ab(0.0407, 0.1182), ch: { c: 0.125, h: 71 }, hex: '#e3a350', note: 'rs'},
+  { code: 'PY110', name: 'Isoindoline yellow', l: 0.8179, ab: new Ab(0.068, 0.175), ch: { c: 0.1877, h: 68.76 }, hex: '#ffab18'},
+  { code: 'PY42', name: 'Yellow ochre', l: 0.7534, ab: new Ab(0.0514, 0.1292), ch: { c: 0.139, h: 68.3 }, hex: '#e89d3f'},
+  { code: 'PBr24', name: 'Naples yellow', l: 0.7966, ab: new Ab(0.0538, 0.131), ch: { c: 0.1416, h: 67.66 }, hex: '#f8aa4c', hideByDefault: true},
+  { code: 'PBr8', name: 'Van Dyke brown', l: 0.5684, ab: new Ab(0.0202, 0.0361), ch: { c: 0.0414, h: 60.83 }, hex: '#89725e'},
+  { code: 'PO20', name: 'Cadmium yellow orange', l: 0.8006, ab: new Ab(0.098, 0.1683), ch: {c: 0.1947, h: 59.79 }, hex: '#ffa038', hideByDefault: true},
+  { code: 'PY43', name: 'Golden ochre', l: 0.6533, ab: new Ab(0.0867, 0.1061), ch: { c: 0.1371, h: 50.75 }, hex: '#d17439', hideByDefault: true},
+  { code: 'PBr7', name: 'Burnt umber', l: 0.5083, ab: new Ab(0.0484, 0.0579), ch: { c: 0.0755, h: 50.07 }, hex: '#88583d', note: 'bu'},
+  { code: 'PBr7', name: 'Burnt sienna', l: 0.6378, ab: new Ab(0.0962, 0.0939), ch: { c: 0.1344, h: 44.29 }, hex: '#cd6d41', note: 'bs'},
+  { code: 'PR102', name: 'English light red', l: 0.6456, ab: new Ab(0.122, 0.0994), ch: {c: 0.1574, h: 39.17 }, hex: '#db663d'},
+  { code: 'PO73', name: 'Red orange', l: 0.7061, ab: new Ab(0.1677, 0.1339), ch: {c: 0.2146, h: 38.59 }, hex: '#ff6120'},
+  { code: 'PO49', name: 'Quinacridone gold', l: 0.5814, ab: new Ab(0.1255, 0.0975), ch: {c: 0.159, h: 37.85 }, hex: '#c6512b', extinct: true, hideByDefault: true},
+  { code: 'PO48', name: 'Quinacridone burnt orange', l: 0.5666, ab: new Ab(0.1279, 0.0932), ch: {c: 0.1583, h: 36.1 }, hex: '#c14b2b', extinct: true, hideByDefault: true},
+  { code: 'PO20', name: 'Cadmium red orange', l: 0.6868, ab: new Ab(0.1746, 0.1263), ch: {c: 0.2155, h: 35.88 }, hex: '#ff5826', hideByDefault: true},
+  { code: 'PO71', name: 'Pyrrole orange', l: 0.6481, ab: new Ab(0.1688, 0.1212), ch: {c: 0.2078, h: 35.67 }, hex: '#f24e1e', hideByDefault: true},
+  { code: 'PBr25', name: 'Benzimidazolone brown', l: 0.4297, ab: new Ab(0.0848, 0.055), ch: {c: 0.1011, h: 32.95 }, hex: '#7e3729'},
+  { code: 'PO36', name: 'Benzimidazolone orange', l: 0.6395, ab: new Ab(0.1713, 0.1073), ch: {c: 0.2021, h: 32.06 }, hex: '#ed4c31', hideByDefault: true},
+  { code: 'PR242', name: 'Geranium red', l: 0.6386, ab: new Ab(0.1802, 0.1114), ch: {c: 0.2118, h: 31.72 }, hex: '#f1462b', hideByDefault: true},
+  { code: 'PR101', name: 'Transparent mars red', l: 0.5435, ab: new Ab(0.1175, 0.072), ch: {c: 0.1378, h: 31.5 }, hex: '#b14b3a', hideByDefault: true},
+  { code: 'PR255', name: 'Pyrrole scarlet', l: 0.6205, ab: new Ab(0.1984, 0.1109), ch: { c: 0.2273, h: 29.21 }, hex: '#f03124'},
+  { code: 'PR108', name: 'Cadmium red light', l: 0.6399, ab: new Ab(0.1889, 0.1015), ch: { c: 0.2144, h: 28.25 }, hex: '#f34238', hideByDefault: true},
+  { code: 'PR101', name: 'Indian red', l: 0.4743, ab: new Ab(0.0734, 0.0378), ch: { c: 0.0826, h: 27.25 }, hex: '#844942'},
+  { code: 'PR207', name: 'Quinacridone scarlet', l: 0.6497, ab: new Ab(0.1752, 0.0887), ch: { c: 0.1964, h: 26.86 }, hex: '#ef5048', hideByDefault: true},
+  { code: 'PR254', name: 'Pyrrole red', l: 0.6051, ab: new Ab(0.2021, 0.0928), ch: { c: 0.2224, h: 24.66 }, hex: '#e92b36'},
+  { code: 'PR206', name: 'Quinacridone burnt scarlet', l: 0.4782, ab: new Ab(0.1225, 0.0543), ch: { c: 0.134, h: 23.9 }, hex: '#9a3736', extinct: true, hideByDefault: true},
+  { code: 'PR178', name: 'Perylene red deep', l: 0.5587, ab: new Ab(0.1746, 0.0768), ch: { c: 0.1908, h: 23.74 }, hex: '#cc3139', hideByDefault: true},
+  { code: 'PR209', name: 'Quinacridone red', l: 0.648, ab: new Ab(0.1856, 0.0774), ch: { c: 0.201, h: 22.64 }, hex: '#f04b52'},
+  { code: 'PR179', name: 'Perylene maroon', l: 0.5526, ab: new Ab(0.1479, 0.0627), ch: { c: 0.1606, h: 22.96 }, hex: '#be4144'},
+  { code: 'PR176', name: 'Benzimidazolone carmine', l: 0.5229, ab: new Ab(0.1649, 0.0662), ch: { c: 0.1777, h: 21.89 }, hex: '#ba2c38', hideByDefault: true},
+  { code: 'PR106', name: 'Genuine vermillion', l: 0.5816, ab: new Ab(0.1359, 0.0531), ch: { c: 0.1459, h: 21.33 }, hex: '#c25153', extinct: true, hideByDefault: true},
+  { code: 'PR108', name: 'Cadmium red deep', l: 0.5362, ab: new Ab(0.1668, 0.0637), ch: { c: 0.1786, h: 20.9 }, hex: '#bf303e', hideByDefault: true},
+  { code: 'PR177', name: 'Anthraquinone red', l: 0.5203, ab: new Ab(0.1782, 0.063), ch: { c: 0.189, h: 19.46 }, hex: '#bd213a', hideByDefault: true},
+  { code: 'PR101', name: 'Caput mortuum', l: 0.4106, ab: new Ab(0.0615, 0.0207), ch: { c: 0.0649, h: 18.65 }, hex: '#ba2f42'},
+  { code: 'PR264', name: 'Pyrrole rubin', l: 0.5267, ab: new Ab(0.1663, 0.055), ch: { c: 0.1752, h: 18.31 }, hex: '#ba2f42', hideByDefault: true},
+  { code: 'PR83', name: 'Alizarin crimson', l: 0.5565, ab: new Ab(0.1875, 0.0616), ch: { c: 0.1973, h: 18.2 }, hex: '#cd2945', fugitive: true, hideByDefault: true},
+  { code: 'PV19', name: 'Quinacridone rose', l: 0.5634, ab: new Ab(0.1862, 0.0586), ch: { c: 0.1952, h: 17.46 }, hex: '#cf2e49', note: 'r'},
+  { code: 'PR233', name: 'Potters pink', l: 0.6793, ab: new Ab(0.0972, 0.0267), ch: { c: 0.1008, h: 15.37 }, hex: '#cf7e84', hideByDefault: true},
+  { code: 'PR122', name: 'Quinacridone magenta', l: 0.5437, ab: new Ab(0.1923, 0.0199), ch: { c: 0.1933, h: 5.92 }, hex: '#c4275f'},
+  { code: 'PV19', name: 'Quinacridone violet', l: 0.4859, ab: new Ab(0.1518, 0.014), ch: { c: 0.1524, h: 5.26 }, hex: '#a12e53', note: 'v'},
+  { code: 'PR202', name: 'Quinacridone carmine', l: 0.5186, ab: new Ab(0.1859, 0.0139), ch: { c: 0.1864, h: 4.28 }, hex: '#b8225b', hideByDefault: true},
+  { code: 'NR9', name: 'Rose madder genuine', l: 0.7726, ab: new Ab(0.1171, 0.0061), ch: { c: 0.1173, h: 2.98 }, hex: '#f394ae', fugitive: true},
+  { code: 'PV29', name: 'Perylene violet', l: 0.5185, ab: new Ab(0.0824, -0.001), ch: { c: 0.0824, h: 359.32 }, hex: '#8f5467'},
+  { code: 'PR298', name: 'YInTiCo red', l: 0.6436, ab: new Ab(0.1259, -0.0035), ch: { c: 0.1259, h: 358.4 }, hex: '#c96a8c', hideByDefault: true},
+  { code: 'PR259', name: 'Ultramarine pink', l: 0.6861, ab: new Ab(0.1224, -0.0337), ch: { c: 0.127, h: 344.63 }, hex: '#d178ad'},
+  { code: 'PV55', name: 'Quinacridone purple', l: 0.5268, ab: new Ab(0.1504, -0.0535), ch: { c: 0.1596, h: 340.42 }, hex: '#a43d87'},
+  { code: 'PV14', name: 'Cobalt violet light', l: 0.6447, ab: new Ab(0.183, -0.1045), ch: { c: 0.2107, h: 330.27 }, hex: '#d151c8'},
+  { code: 'PV49', name: 'Cobalt violet', l: 0.7332, ab: new Ab(0.1343, -0.0561), ch: { c: 0.1456, h: 337.35 }, hex: '#e283c9', hideByDefault: true},
+  { code: 'PV16', name: 'Manganese violet', l: 0.4783, ab: new Ab(0.1195, -0.0901), ch: { c: 0.1497, h: 322.99 }, hex: '#83398d'},
+  { code: 'PV23', name: 'Dioxazine violet', l: 0.424, ab: new Ab(0.0404, -0.0343), ch: { c: 0.053, h: 319.65 }, hex: '#5b4560'},
+  { code: 'PV37', name: 'Dioxazine violet', l: 0.3913, ab: new Ab(0.0774, -0.089), ch: { c: 0.118, h: 311.02 }, hex: '#592f73'},
+  { code: 'PV15', name: 'Ultramarine violet reddish', l: 0.7007, ab: new Ab(0.0548, -0.072), ch: {c: 0.0904, h: 307.27 }, hex: '#ae90cb', note: 'r'},
+  { code: 'PB66', name: 'Synthetic indigo', l: 0.3363, ab: new Ab(0.0137, -0.022), ch: {c: 0.0259, h: 301.99 }, hex: '#393442', fugitive: true},
+  { code: 'PB60', name: 'Indanthrene blue', l: 0.3389, ab: new Ab(0.0256, -0.0742), ch: {c: 0.0785, h: 289.02 }, hex: '#372f5d'},
+  { code: 'PV15', name: 'Ultramarine violet blueish', l: 0.4525, ab: new Ab(0.0259, -0.1493), ch: {c: 0.1515, h: 279.83 }, hex: '#4946a7', note: 'b'},
+  { code: 'PB86', name: 'YInMn Blue', l: 0.4055, ab: new Ab(-0.0059, -0.1566), ch: {c: 0.1567, h: 267.86 }, hex: '#263d9c', hideByDefault: true},
+  { code: 'PB32', name: 'Smalt', l: 0.4677, ab: new Ab(-0.0078, -0.1675), ch: {c: 0.1677, h: 267.33 }, hex: '#314fb6', extinct: true},
+  { code: 'PB29', name: 'Ultramarine deep', l: 0.5005, ab: new Ab(-0.0249, -0.1999), ch: {c: 0.2015, h: 262.9 }, hex: '#1e57d4'},
+  { code: 'PB74', name: 'Cobalt blue deep', l: 0.4835, ab: new Ab(-0.024, -0.1848), ch: {c: 0.1863, h: 262.61 }, hex: '#1e54c5', hideByDefault: true},
+  { code: 'PB15:6', name: 'Phthalo blue redish', l: 0.4165, ab: new Ab(-0.0288, -0.1451), ch: {c: 0.148, h: 258.79 }, hex: '#0c479a'},
+  { code: 'NB1', name: 'Genuine indigo', l: 0.4087, ab: new Ab(-0.0127, -0.0489), ch: {c: 0.0505, h: 255.45 }, hex: '#374b65', fugitive: true},
+  { code: 'PB28', name: 'Cobalt blue', l: 0.5525, ab: new Ab(-0.0476, -0.1794), ch: {c: 0.1856, h: 255.13 }, hex: '#006fdb'},
+  { code: 'PB15:3', name: 'Phthalo blue greenish', l: 0.4225, ab: new Ab(-0.0645, -0.1366), ch: {c: 0.1511, h: 244.73 }, hex: '#005192'},
+  { code: 'PB35', name: 'Cerulean blue', l: 0.5999, ab: new Ab(-0.084, -0.1364), ch: {c: 0.1602, h: 238.37 }, hex: '#008ad4', hideByDefault: true},
+  { code: 'PB27', name: 'Prussian blue', l: 0.499, ab: new Ab(-0.0619, -0.0871), ch: {c: 0.1068, h: 234.59 }, hex: '#006b96'},
+  { code: 'PB36', name: 'Cobalt chromite blue', l: 0.5574, ab: new Ab(-0.0918, -0.1116), ch: {c: 0.1444, h: 230.56 }, hex: '#0080b3'},
+  { code: 'PB16', name: 'Phthalo turquoise', l: 0.403, ab: new Ab(-0.0702, -0.072), ch: { c: 0.1005, h: 225.7 }, hex: '#0094c7'},
+  { code: 'PB15', name: 'Manganese blue nova', l: 0.6161, ab: new Ab(-0.1319, -0.1431), ch: { c: 0.1947, h: 227.33 }, hex: '#0094c7', note: 'mn'},
+  { code: 'PB33', name: 'Manganese blue', l: 0.606, ab: new Ab(-0.1316, -0.1396), ch: { c: 0.1919, h: 226.7 }, hex: '#0091c1', extinct: true, hideByDefault: true},
+  { code: 'PB28', name: 'Cobalt turquoise', l: 0.6085, ab: new Ab(-0.1425, -0.0866), ch: { c: 0.1668, h: 211.27 }, hex: '#0095ad', note: 't'},
+  { code: 'PG50', name: 'Cobalt teal', l: 0.6969, ab: new Ab(-0.1464, -0.0678), ch: { c: 0.1614, h: 204.86 }, hex: '#00b5c6', note: 't'},
+  { code: 'PB36', name: 'Cobalt turquoise deep', l: 0.5576, ab: new Ab(-0.1112, -0.033), ch: { c: 0.116, h: 196.55 }, hex: '#00878a'},
+  { code: 'PG18', name: 'Viridian', l: 0.7025, ab: new Ab(-0.1192, 0.0057), ch: { c: 0.1193, h: 177.25 }, hex: '#2eb79e'},
+  { code: 'PG26', name: 'Cobalt green medium', l: 0.4651, ab: new Ab(-0.0664, 0.0069), ch: { c: 0.0668, h: 174.11 }, hex: '#2a6657'},
+  { code: 'PG7', name: 'Phthalo green blueish', l: 0.5018, ab: new Ab(-0.162, 0.0206), ch: { c: 0.1633, h: 172.77 }, hex: '#00795d'},
+  { code: 'PG36', name: 'Phthalo green yellowish', l: 0.5765, ab: new Ab(-0.1791, 0.0566), ch: { c: 0.1878, h: 162.45 }, hex: '#00935e'},
+  { code: 'PG19', name: 'Cobalt green pure', l: 0.5074, ab: new Ab(-0.0963, 0.0337), ch: { c: 0.102, h: 160.7 }, hex: '#1d7752'},
+  { code: 'PG50', name: 'Cobalt green light', l: 0.5336, ab: new Ab(-0.1108, 0.0443), ch: { c: 0.1193, h: 158.22 }, hex: '#118152'},
+  { code: 'PBk31', name: 'Perylene green', l: 0.4927, ab: new Ab(-0.0186, 0.0124), ch: { c: 0.0223, h: 146.4 }, hex: '#59655a'},
+  { code: 'PG17', name: 'Chrome oxide green', l: 0.5804, ab: new Ab(-0.0633, 0.0552), ch: { c: 0.084, h: 142.61 }, hex: '#608756'},
+  { code: 'PG8', name: 'Nitroso green', l: 0.4131, ab: new Ab(-0.0465, 0.0382), ch: { c: 0.0602, h: 140.66 }, hex: '#aeb884'},
+  { code: 'PG23', name: 'Terre verte', l: 0.7615, ab: new Ab(-0.0314, 0.0634), ch: { c: 0.0708, h: 116.36 }, hex: '#aeb884'},
+]

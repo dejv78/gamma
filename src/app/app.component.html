@@ -1,0 +1,36 @@
+<p-tabs [value]="store.mode()" (valueChange)="onModeChange($event)">
+  <p-tablist>
+    <p-tab value="freestyle">Freestyle</p-tab>
+    <p-tab value="pigment-based">Pigments</p-tab>
+    <p-tab value="image-based">Image</p-tab>
+  </p-tablist>
+  <p-tabpanels>
+    <p-tabpanel value="freestyle">
+      TODO
+    </p-tabpanel>
+    <p-tabpanel value="pigment-based">
+      TODO
+    </p-tabpanel>
+    <p-tabpanel value="image-based">
+      <div id="canvas" #im>
+      </div>
+    </p-tabpanel>
+  </p-tabpanels>
+</p-tabs>
+<div id="color-wheel" #cv>
+</div>
+<div id="toolbar">
+  <div class="flex flex-column align-items-center title mb-4">
+    <h2 class="mb-0">GaMMa</h2>
+    <h3>Gamut Masking / Mapping</h3>
+  </div>
+
+  <div class="flex flex-row align-items-center">
+    <p-toggleswitch id="imageGamut" [(ngModel)]="mapImageGamut"/>
+    <span class="ml-2">Map image gamut</span>
+  </div>
+  <div class="flex flex-row align-items-center">
+    <p-toggleswitch id="filterGrayscale" [(ngModel)]="filterGrayscale"/>
+    <span class="ml-2">Grayscale</span>
+  </div>
+</div>

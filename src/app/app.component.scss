@@ -1,0 +1,41 @@
+:host {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  flex: 0 0 100%;
+}
+
+p-tabs, p-tabpanel {
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+}
+
+#canvas {
+  height: 100vh;
+}
+
+#color-wheel {
+  border-left: 1px solid var(--p-tabs-tablist-border-color);
+  flex: 0 0 100vh;
+  height: 100vh;
+}
+
+#toolbar {
+  background-color: var(--p-content-background);
+  border-left: 1px solid var(--p-tabs-tablist-border-color);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  flex: 0 0 300px;
+}
+
+h2 {
+  color: var(--p-primary-color);
+}
+
+.title {
+  background-color: var(--p-surface-800);
+  border-bottom: 1px solid var(--p-tabs-tablist-border-color);
+}

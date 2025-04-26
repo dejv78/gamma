@@ -1,0 +1,12 @@
+@use "primeflex/primeflex.css";
+@use "primeicons/primeicons.css";
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  overflow: hidden;
+}
