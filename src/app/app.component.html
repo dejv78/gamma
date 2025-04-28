@@ -21,16 +21,17 @@
 </div>
 <div id="toolbar">
   <div class="flex flex-column align-items-center title mb-4">
-    <h2 class="mb-0">GaMMa</h2>
+    <h2 class="mb-0">Moody</h2>
     <h3>Gamut Masking / Mapping</h3>
   </div>
 
+  <h4>Color wheel</h4>
   <div class="flex flex-row align-items-center">
-    <p-toggleswitch id="imageGamut" [(ngModel)]="mapImageGamut"/>
-    <span class="ml-2">Map image gamut</span>
+    <p-toggleswitch [(ngModel)]="showPigmentGamut"/>
+    <span class="ml-2">Show pigment gamut</span>
   </div>
   <div class="flex flex-row align-items-center">
-    <p-toggleswitch id="filterGrayscale" [(ngModel)]="filterGrayscale"/>
-    <span class="ml-2">Grayscale</span>
+    <p-toggleswitch [(ngModel)]="showPigmentMarks"/>
+    <span class="ml-2">Show pigment marks</span>
   </div>
 </div>

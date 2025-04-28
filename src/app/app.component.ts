@@ -6,11 +6,8 @@ import {ColorWheel} from "./color-wheel/color-wheel";
 import {Image} from "./image/image";
 import {Tab, TabList, TabPanel, TabPanels, Tabs} from "primeng/tabs";
 import {ToggleSwitch} from "primeng/toggleswitch";
-import {Button} from "primeng/button";
 import {AppStore} from "./store/app-store";
 import {OpMode} from "./model/app.model";
-
-
 
 
 @Component({
@@ -38,15 +35,15 @@ export class AppComponent
   private image: Image = inject(Image);
   private colorWheel: ColorWheel = inject(ColorWheel);
 
-  public filterGrayscale: ModelSignal<boolean> = model(false);
-  public mapImageGamut: ModelSignal<boolean> = model(true);
+  public showPigmentGamut: ModelSignal<boolean> = model(false);
+  public showPigmentMarks: ModelSignal<boolean> = model(false);
 
   constructor() {
     effect(() => {
-      this.image.filterGrayscale.set(this.filterGrayscale());
+      this.store.setShowPigmentGamut(this.showPigmentGamut());
     });
     effect(() => {
-      this.colorWheel.mapImageGamut.set(this.mapImageGamut());
+      this.store.setShowPigmentMarks(this.showPigmentMarks());
     });
   }
 
@@ -60,9 +57,6 @@ export class AppComponent
     this.colorWheel.destroy();
   }
 
-  public onClick() {
-    //this.colorWheel.generateImageGamut(this.image.pixels!, this.image.w, this.image.h);
-  }
 
   public onModeChange($event: string | number) {
     this.store.setMode($event as OpMode);

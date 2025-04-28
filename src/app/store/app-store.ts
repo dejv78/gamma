@@ -1,11 +1,15 @@
 import {ImageData, OpMode} from "../model/app.model";
 import {patchState, signalStore, withMethods, withState} from "@ngrx/signals";
 import {Matrix} from "pixi.js";
+import {Pigment, PIGMENTS} from "../color-wheel/pigments";
 
 export type AppStoreState = {
   mode: OpMode;
   imageData: ImageData;
   gamutTransformMatrix: Matrix;
+  pigments: Pigment[];
+  showPigmentGamut: boolean;
+  showPigmentMarks: boolean;
 }
 
 const initialState: AppStoreState = {
@@ -14,7 +18,10 @@ const initialState: AppStoreState = {
     width: 0,
     height: 0,
   },
-  gamutTransformMatrix: new Matrix()
+  gamutTransformMatrix: new Matrix(),
+  pigments: PIGMENTS,
+  showPigmentGamut: false,
+  showPigmentMarks: false,
 }
 
 export const AppStore = signalStore(
@@ -50,6 +57,20 @@ export const AppStore = signalStore(
           gamutTransformMatrix: m
         }));
       },
-    })
-  )
+
+    setShowPigmentGamut: (showPigmentGamut: boolean) => {
+      patchState(store, (state) => ({
+        ...state,
+        showPigmentGamut
+      }));
+    },
+
+    setShowPigmentMarks: (showPigmentMarks: boolean) => {
+      patchState(store, (state) => ({
+        ...state,
+        showPigmentMarks
+      }));
+    }
+
+  }))
 );
