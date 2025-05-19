@@ -48,8 +48,8 @@ export class Image
   private async generateImage(stage: Container<any>): Promise<any> {
     stage.removeChildren();
     //const texture: Texture = await Assets.load('/redgreen.jpg');
-    //const texture: Texture = await Assets.load('/landscape.jpg');
-    const texture: Texture = await Assets.load('/bridge.png');
+    const texture: Texture = await Assets.load('/tree.jpg');
+    //const texture: Texture = await Assets.load('/bridge.png');
     //const texture: Texture = await Assets.load('/wheel.png');
     this.image = Sprite.from(texture);
     const o: GetPixelsOutput = this.app.renderer.extract.pixels(this.image);

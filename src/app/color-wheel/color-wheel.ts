@@ -187,7 +187,7 @@ export class ColorWheel
 
   private generateColorWheel(stage: any): any {
     const segmentSize = this.maxChromaDiameter / (SATURATION_SEGMENT_COUNT + 1);
-    const saturationStepOKLCh = MAX_CHROMA / SATURATION_SEGMENT_COUNT;
+    const saturationStepOKLCh =MAX_CHROMA / (SATURATION_SEGMENT_COUNT + 0.5);
     const angle = (Math.PI * 2) / HUE_SEGMENT_COUNT;
     let a: number = 0 - angle / 2;
     let hue: number = 0;
@@ -308,8 +308,8 @@ export class ColorWheel
         stage.addChild(dot);
 
         const text = new Text({
-          text: pigment.code, style: {
-            fontSize: 13,
+          text: `${pigment.code}\n${pigment.name}`, style: {
+            fontSize: 15,
             fontWeight: 'bold',
             fill: 'white',
             align: 'center',
@@ -322,7 +322,8 @@ export class ColorWheel
           }
         });
         text.x = x;
-        text.y = y;
+        text.y = y+5;
+        text.anchor.x = 0.5;
         stage.addChild(text);
       }
     }
